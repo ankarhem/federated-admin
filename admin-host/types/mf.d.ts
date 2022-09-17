@@ -1,2 +1,1 @@
-declare module 'admin_remote/pages/Dashboard';
-declare module 'admin_remote/Button';
+declare module 'admin_remote/pages/Orders';

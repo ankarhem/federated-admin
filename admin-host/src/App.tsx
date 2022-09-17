@@ -4,7 +4,9 @@ import Dashboard from '../pages/Dashboard';
 import { NotFound } from './components/CustomError';
 import Layout from './components/Layout';
 
-const LazyDashboard = React.lazy(() => import('admin_remote/pages/Dashboard'));
+// TODO: Add a nprogress loading spinner
+
+const LazyOrders = React.lazy(() => import('admin_remote/pages/Orders'));
 
 const App = () => {
   return (
@@ -15,10 +17,10 @@ const App = () => {
             <Route path='*' element={<NotFound />} />
             <Route index element={<Dashboard />} />
             <Route
-              path='/checkout'
+              path='/checkout/orders'
               element={
-                <Suspense fallback={'Loading ...'}>
-                  <LazyDashboard />
+                <Suspense fallback={'Loading...'}>
+                  <LazyOrders />
                 </Suspense>
               }
             />

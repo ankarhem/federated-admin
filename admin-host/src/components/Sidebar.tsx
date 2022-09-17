@@ -9,16 +9,22 @@ const Sidebar = ({ className }: { className?: string }) => {
         <NorceLogo className='h-[76px] pl-2 pr-24 py-2.5' />
       </NavLink>
       <div className='h-4' />
-      <ul className='menu flex flex-col p-0 px-4'>
-        <li>
-          <NavLink className='uppercase' to='/checkout'>
-            Checkout
-          </NavLink>
+
+      <ul className='menu menu-compact p-2 rounded-box'>
+        {/* Checkout Squad */}
+        <li className='menu-title'>
+          <span>Checkout</span>
         </li>
         <li>
-          <NavLink className='uppercase' to='/products'>
-            Products
-          </NavLink>
+          <NavLink to='/checkout/orders'>Orders</NavLink>
+        </li>
+
+        {/* Product Squad */}
+        <li className='menu-title'>
+          <span>Products</span>
+        </li>
+        <li>
+          <NavLink to='/products'>List products</NavLink>
         </li>
       </ul>
     </aside>

@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "NODE_ENV=development webpack serve --hot",
     "build": "NODE_ENV=production webpack",
+    "start:dev": "NODE_ENV=development webpack serve",
     "start": "http-server ./dist -p 3000 --cors='*'",
     "clean": "rm dist/bundle.js"
   },

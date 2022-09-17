@@ -12,6 +12,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 const config = {
   mode: isDevelopment ? 'development' : 'production',
   entry: ['./src/index.ts'],
+  devtool: 'source-map',
   devServer: {
     port: 3000,
     // server app on all paths
@@ -26,7 +27,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3000/',
+    // publicPath: 'http://localhost:3000/',
   },
   module: {
     rules: [
@@ -66,7 +67,10 @@ const config = {
         filename: '[name].css',
         chunkFilename: '[id].css',
       }),
-    isDevelopment && new ReactRefreshWebpackPlugin(),
+    isDevelopment &&
+      new ReactRefreshWebpackPlugin({
+        exclude: [/node_modules/, /bootstrap\.tsx$/],
+      }),
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
@@ -99,15 +103,15 @@ const config = {
   },
   optimization: {
     // runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendor: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendors',
+    //       chunks: 'all',
+    //     },
+    //   },
+    // },
   },
 };
 
