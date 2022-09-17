@@ -8,12 +8,11 @@ const { ModuleFederationPlugin } = require('webpack').container;
 
 const deps = require('./package.json').dependencies;
 const isDevelopment = process.env.NODE_ENV !== 'production';
-
 const config = {
   mode: isDevelopment ? 'development' : 'production',
   entry: ['./src/index.ts'],
   devServer: {
-    port: 3000,
+    port: 3001,
     // server app on all paths
     historyApiFallback: true,
     static: {
@@ -26,7 +25,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3000/',
+    publicPath: 'http://localhost:3001/',
   },
   module: {
     rules: [
@@ -73,10 +72,11 @@ const config = {
       favicon: './public/favicon.svg',
     }),
     new ModuleFederationPlugin({
-      name: 'admin_host',
+      name: 'admin_remote',
       filename: 'remoteEntry.js',
-      remotes: {
-        admin_remote: 'admin_remote@http://localhost:3001/remoteEntry.js',
+      exposes: {
+        './pages/Dashboard': './pages/Dashboard.tsx',
+        './Button': './src/components/Button.tsx',
       },
       shared: {
         react: {
