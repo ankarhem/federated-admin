@@ -9,6 +9,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require('./package.json').dependencies;
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
+/** @type { import('webpack').Configuration } */
 const config = {
   mode: isDevelopment ? 'development' : 'production',
   entry: ['./src/index.ts'],
@@ -81,6 +82,9 @@ const config = {
       filename: 'remoteEntry.js',
       remotes: {
         admin_remote: 'admin_remote@http://localhost:3001/remoteEntry.js',
+      },
+      exposes: {
+        './Layout': './src/components/Layout',
       },
       shared: {
         react: {

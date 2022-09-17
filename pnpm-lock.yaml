@@ -9,6 +9,7 @@ importers:
       '@svgr/webpack': ^6.3.1
       '@types/react': ^18.0.20
       '@types/react-dom': ^18.0.6
+      '@types/webpack': ^5.28.0
       autoprefixer: ^10.4.11
       clsx: ^1.2.1
       css-loader: ^6.7.1
@@ -40,10 +41,11 @@ importers:
       react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@norce/tailwind-preset': 1.0.1_v5wth6jkc6txrcq2ot2bz64iie
-      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_6mooiwnzb26vti6xfwwzkqin6i
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_k5dim3av2b73h2lcsckzgl7rmy
       '@svgr/webpack': 6.3.1
       '@types/react': 18.0.20
       '@types/react-dom': 18.0.6
+      '@types/webpack': 5.28.0_webpack-cli@4.10.0
       autoprefixer: 10.4.11_postcss@8.4.16
       clsx: 1.2.1
       css-loader: 6.7.1_webpack@5.74.0
@@ -70,6 +72,7 @@ importers:
       '@svgr/webpack': ^6.3.1
       '@types/react': ^18.0.20
       '@types/react-dom': ^18.0.6
+      '@types/webpack': ^5.28.0
       autoprefixer: ^10.4.11
       clsx: ^1.2.1
       css-loader: ^6.7.1
@@ -101,10 +104,11 @@ importers:
       react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@norce/tailwind-preset': 1.0.1_v5wth6jkc6txrcq2ot2bz64iie
-      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_6mooiwnzb26vti6xfwwzkqin6i
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.7_k5dim3av2b73h2lcsckzgl7rmy
       '@svgr/webpack': 6.3.1
       '@types/react': 18.0.20
       '@types/react-dom': 18.0.6
+      '@types/webpack': 5.28.0_webpack-cli@4.10.0
       autoprefixer: 10.4.11_postcss@8.4.16
       clsx: 1.2.1
       css-loader: 6.7.1_webpack@5.74.0
@@ -1474,7 +1478,7 @@ packages:
       tailwindcss: 3.1.8
     dev: true
 
-  /@pmmmwh/react-refresh-webpack-plugin/0.5.7_6mooiwnzb26vti6xfwwzkqin6i:
+  /@pmmmwh/react-refresh-webpack-plugin/0.5.7_k5dim3av2b73h2lcsckzgl7rmy:
     resolution: {integrity: sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==}
     engines: {node: '>= 10.13'}
     peerDependencies:
@@ -1500,6 +1504,7 @@ packages:
       webpack-plugin-serve:
         optional: true
     dependencies:
+      '@types/webpack': 5.28.0_webpack-cli@4.10.0
       ansi-html-community: 0.0.8
       common-path-prefix: 3.0.0
       core-js-pure: 3.25.1
@@ -1813,6 +1818,19 @@ packages:
     resolution: {integrity: sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==}
     dependencies:
       '@types/node': 18.7.18
+    dev: true
+
+  /@types/webpack/5.28.0_webpack-cli@4.10.0:
+    resolution: {integrity: sha512-8cP0CzcxUiFuA9xGJkfeVpqmWTk9nx6CWwamRGCj95ph1SmlRRk9KlCZ6avhCbZd4L68LvYT6l1kpdEnQXrF8w==}
+    dependencies:
+      '@types/node': 18.7.18
+      tapable: 2.2.1
+      webpack: 5.74.0_webpack-cli@4.10.0
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
     dev: true
 
   /@types/ws/8.5.3:

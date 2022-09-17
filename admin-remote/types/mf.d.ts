@@ -1,1 +1,1 @@
-declare module 'admin_host/SidebarSection';
+declare module 'admin_host/Layout';
