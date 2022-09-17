@@ -14,6 +14,7 @@ importers:
       file-loader: ^6.2.0
       html-webpack-plugin: ^5.5.0
       http-server: ^14.1.1
+      mini-css-extract-plugin: ^2.6.1
       postcss: ^8.4.16
       postcss-loader: ^7.0.1
       prettier: ^2.7.1
@@ -42,6 +43,7 @@ importers:
       file-loader: 6.2.0_webpack@5.74.0
       html-webpack-plugin: 5.5.0_webpack@5.74.0
       http-server: 14.1.1
+      mini-css-extract-plugin: 2.6.1_webpack@5.74.0
       postcss: 8.4.16
       postcss-loader: 7.0.1_qjv4cptcpse3y5hrjkrbb7drda
       prettier: 2.7.1
@@ -1941,6 +1943,16 @@ packages:
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+    dev: true
+
+  /mini-css-extract-plugin/2.6.1_webpack@5.74.0:
+    resolution: {integrity: sha512-wd+SD57/K6DiV7jIR34P+s3uckTRuQvx0tKPcvjFlrEylk6P4mQ2KSWk1hblj1Kxaqok7LogKOieygXqBczNlg==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      schema-utils: 4.0.0
+      webpack: 5.74.0_webpack-cli@4.10.0
     dev: true
 
   /minimalistic-assert/1.0.1:
