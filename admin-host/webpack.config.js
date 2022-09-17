@@ -47,6 +47,8 @@ const config = {
   },
   devServer: {
     port: 3000,
+    // server app on all paths
+    historyApiFallback: true,
     static: {
       directory: './dist',
     },
