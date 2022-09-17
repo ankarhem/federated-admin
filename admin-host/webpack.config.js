@@ -59,6 +59,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
+      favicon: './public/favicon.svg',
     }),
   ].filter(Boolean),
   resolve: {
