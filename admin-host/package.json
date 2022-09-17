@@ -20,11 +20,11 @@
   "devDependencies": {
     "@norce/tailwind-preset": "^1.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@svgr/webpack": "^6.3.1",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.11",
     "css-loader": "^6.7.1",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.6.1",
