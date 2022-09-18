@@ -15,6 +15,8 @@ const config = {
   entry: ['./src/index.ts'],
   devtool: 'source-map',
   devServer: {
+    hot: false,
+    liveReload: true,
     port: 3001,
     // server app on all paths
     historyApiFallback: true,
@@ -28,7 +30,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    // publicPath: 'http://localhost:3001/',
+    publicPath: 'http://localhost:3001/',
   },
   module: {
     rules: [
@@ -85,6 +87,7 @@ const config = {
       },
       exposes: {
         './pages/Orders': './pages/Orders',
+        './NavLinks': './src/NavLinks',
       },
       shared: {
         react: {
@@ -106,7 +109,7 @@ const config = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   optimization: {
-    // runtimeChunk: 'single',
+    runtimeChunk: false,
     // splitChunks: {
     //   cacheGroups: {
     //     vendor: {

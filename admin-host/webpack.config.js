@@ -5,6 +5,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const ReactRefreshTypeScript = require('react-refresh-typescript');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const deps = require('./package.json').dependencies;
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -15,6 +16,7 @@ const config = {
   entry: ['./src/index.ts'],
   devtool: 'source-map',
   devServer: {
+    hot: false, // fix hot reloading
     port: 3000,
     // server app on all paths
     historyApiFallback: true,
@@ -28,7 +30,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    // publicPath: 'http://localhost:3000/',
+    publicPath: 'http://localhost:3000/',
   },
   module: {
     rules: [
@@ -101,12 +103,13 @@ const config = {
         },
       },
     }),
+    isDevelopment && new LiveReloadPlugin(),
   ].filter(Boolean),
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
   optimization: {
-    // runtimeChunk: 'single',
+    runtimeChunk: false,
     // splitChunks: {
     //   cacheGroups: {
     //     vendor: {
