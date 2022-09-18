@@ -9,17 +9,31 @@ import { NotFound } from './components/CustomError';
 // TODO: Add a nprogress loading spinner
 
 // const LazyOrders = React.lazy(() => import('admin_remote/pages/Orders'));
-import CheckoutNav from 'admin_remote/NavLinks';
-import Orders, { loader as ordersLoader } from 'admin_remote/pages/Orders';
+import {
+  exposedNavigation as checkoutNavigation,
+  exposedRoutes as checkoutRoutes,
+} from 'admin_remote/Router';
 import Dashboard from '../pages/Dashboard';
 import Layout from './components/Layout';
+
+interface Link {
+  path: string;
+  title: string;
+}
 
 const Nav = () => {
   return (
     <nav>
       <ul className='menu menu-compact p-4 rounded-box'>
         {/* Checkout Squad */}
-        <CheckoutNav />
+        <li className='menu-title'>
+          <span>Checkout</span>
+        </li>
+        {checkoutNavigation.map((link: Link) => (
+          <li key={link.path}>
+            <NavLink to={link.path}>{link.title}</NavLink>
+          </li>
+        ))}
 
         {/* Product Squad */}
         <li className='menu-title'>
@@ -33,6 +47,8 @@ const Nav = () => {
   );
 };
 
+const routes: React.ComponentProps<typeof Route>[] = [...checkoutRoutes];
+
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -45,11 +61,9 @@ export const router = createBrowserRouter(
     >
       <Route path='*' element={<NotFound />} />
       <Route index element={<Dashboard />} />
-      <Route
-        path='/checkout/orders'
-        element={<Orders />}
-        loader={ordersLoader}
-      />
+      {routes.map((route, i) => (
+        <Route key={`${route.id}-${i}`} {...route} />
+      ))}
     </Route>
   )
 );

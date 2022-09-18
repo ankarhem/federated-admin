@@ -34,7 +34,7 @@ function Orders() {
           <tbody>
             {data?.map((order: any) => {
               return (
-                <tr className='hover'>
+                <tr key={order.id} className='hover'>
                   <th>{order.lastModified}</th>
                   <td>{order.id}</td>
                   <td>{order.cart.total.includingVat}</td>

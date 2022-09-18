@@ -86,8 +86,7 @@ const config = {
         admin_host: 'admin_host@http://localhost:3000/remoteEntry.js',
       },
       exposes: {
-        './pages/Orders': './pages/Orders',
-        './NavLinks': './src/NavLinks',
+        './Router': './src/Router',
       },
       shared: {
         react: {
