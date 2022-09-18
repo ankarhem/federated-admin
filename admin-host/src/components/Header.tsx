@@ -14,7 +14,9 @@ const Header = ({ className }: { className?: string }) => {
   };
 
   return (
-    <header className={clsx(className, 'bg-base-100 shadow-md')}>
+    <header
+      className={clsx(className, 'bg-base-100 shadow-md shadow-base-content')}
+    >
       <button className='btn btn-circle btn-xs btn-outline mx-2'>?</button>
       <label className='btn btn-circle btn-xs btn-outline swap swap-rotate mx-2'>
         <input type='checkbox' />

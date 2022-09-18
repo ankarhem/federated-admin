@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "NODE_ENV=development webpack serve",
+    "dev": "NODE_ENV=development webpack serve --progress",
     "build": "NODE_ENV=production webpack",
     "start:dev": "NODE_ENV=development webpack serve",
     "start": "http-server ./dist -p 3001 --cors='*'",

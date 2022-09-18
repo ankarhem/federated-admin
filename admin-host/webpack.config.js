@@ -17,6 +17,7 @@ const config = {
   devtool: 'source-map',
   devServer: {
     hot: false, // fix hot reloading
+    liveReload: true,
     port: 3000,
     // server app on all paths
     historyApiFallback: true,
